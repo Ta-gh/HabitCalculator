@@ -21,8 +21,8 @@ namespace HabitCalculator
                 Console.WriteLine("  4. 🔥 Подсчет калорий (Студент 4)");
                 Console.WriteLine("  5. 🧘 Подсчет минут медитации (Студент 5)");
                 Console.WriteLine("  6. 🏋️ Подсчет приседаний (Студент 6)");
-                Console.WriteLine("  0. ❌ Выход");
                 Console.WriteLine("  7. 🏋️‍♀️ Подсчет калорий тренировки (Студент 7)");
+                Console.WriteLine("  0. ❌ Выход");
                 Console.Write("👉 Ваш выбор: ");
 
                 string choice = Console.ReadLine();
@@ -285,7 +285,7 @@ static void CalculateWorkoutCalories()
     int intensity = int.Parse(Console.ReadLine());
 
     // Для упрощения используем средний вес 70 кг
-    double weightKg = 70.0;
+    double weightKg = 80.0;
     double caloriesBurned = (intensity * 3.5 * weightKg * minutes) / 200.0;
 
     Console.WriteLine($"\nРезультаты:");
