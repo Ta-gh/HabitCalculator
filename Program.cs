@@ -168,7 +168,7 @@ namespace HabitCalculator
                 Console.WriteLine("Хорошо, но до нормы еще немного. Выпейте еще ста-кан!");
             else
                 Console.WriteLine("Отлично! Вы поддерживаете водный баланс!");
-        };
+        }
 
 
 
