@@ -40,11 +40,7 @@ namespace HabitCalculator
                 {
                     // ==================== СТУДЕНТ 1: ШАГИ ====================
                     case "1":
-                        // TODO: СТУДЕНТ 1 - ЗАМЕНИТЕ СЛЕДУЮЩУЮ СТРОКУ
-                        // Вместо этого временного сообщения вызовите ваш метод CalculateSteps()
-                        Console.WriteLine("Функция подсчета шагов пока не реализована.");
-                        // После замены должно быть:
-                        // CalculateSteps();
+                        CalculateSteps();
                         break;
 
                     // ==================== СТУДЕНТ 2: ВОДА ====================
@@ -128,6 +124,26 @@ namespace HabitCalculator
         // --------------------------------------------------------------------
 
         // 📍 СТУДЕНТ 1: Добавьте сюда метод CalculateSteps()
+
+        static void CalculateSteps()
+{
+    Console.Write("Введите количество шагов за сегодня: ");
+    int steps = int.Parse(Console.ReadLine());
+    
+    double kilometers = steps * 0.75 / 1000; // перевод в км
+    double calories = steps * 0.04;
+     Console.WriteLine($"\n Результаты:");
+    Console.WriteLine($"Пройдено: {kilometers:F2} км");
+    Console.WriteLine($"Сожжено: {calories:F0} ккал");
+     Console.Write("\n Рекомендация: ");
+    if (steps < 5000)
+        Console.WriteLine("Мало двигаетесь! Постарайтесь проходить минимум 5000 шагов.");
+    else if (steps < 10000)
+        Console.WriteLine("Хороший результат! Но до нормы 10000 шагов еще немного.");
+    else
+        Console.WriteLine("Отлично! Вы выполнили норму шагов!");
+}
+
         
       
         // 📍 СТУДЕНТ 2: Добавьте сюда метод CalculateWater()
