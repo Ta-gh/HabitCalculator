@@ -40,6 +40,10 @@ namespace HabitCalculator
                 {
                     // ==================== СТУДЕНТ 1: ШАГИ ====================
                     case "1":
+                        // TODO: СТУДЕНТ 1 - ЗАМЕНИТЕ СЛЕДУЮЩУЮ СТРОКУ
+                        // Вместо этого временного сообщения вызовите ваш метод CalculateSteps()
+                       // Console.WriteLine("Функция подсчета шагов пока не реализована.");
+                        // После замены должно быть:
                         CalculateSteps();
                         break;
 
@@ -47,23 +51,34 @@ namespace HabitCalculator
                     case "2":
                         // TODO: СТУДЕНТ 2 - ЗАМЕНИТЕ СЛЕДУЮЩУЮ СТРОКУ
                         // Вместо этого временного сообщения вызовите ваш метод CalculateWater()
-                        Console.WriteLine("Функция подсчета воды пока не реализована.");
+                        CalculateWater();
                         // После замены должно быть:
-                        // CalculateWater();
-                        break;
+                         break;
 
                     // ==================== СТУДЕНТ 3: СТРАНИЦЫ ====================
                     case "3":
+                        // TODO: СТУДЕНТ 3 - ЗАМЕНИТЕ СЛЕДУЮЩУЮ СТРОКУ
+                        // Вместо этого временного сообщения вызовите ваш метод CalculatePages()
+                       // Console.WriteLine("Функция подсчета страниц пока не реализована.");
+                        // После замены должно быть:
                         CalculatePages();
                         break;
 
                     // ==================== СТУДЕНТ 4: КАЛОРИИ ====================
                     case "4":
+                        // TODO: СТУДЕНТ 4 - ЗАМЕНИТЕ СЛЕДУЮЩУЮ СТРОКУ
+                        // Вместо этого временного сообщения вызовите ваш метод CalculateCalories()
+                        //Console.WriteLine("Функция подсчета калорий пока не реализована.");
+                        // После замены должно быть:
                         CalculateCalories();
                         break;
 
                     // ==================== СТУДЕНТ 5: МЕДИТАЦИЯ ====================
                     case "5":
+                        // TODO: СТУДЕНТ 5 - ЗАМЕНИТЕ СЛЕДУЮЩУЮ СТРОКУ
+                        // Вместо этого временного сообщения вызовите ваш метод CalculateMeditation()
+                       // Console.WriteLine("Функция подсчета медитации пока не реализована.");
+                        // После замены должно быть:
                         CalculateMeditation();
                         break;
 
@@ -135,6 +150,25 @@ namespace HabitCalculator
         
       
         // 📍 СТУДЕНТ 2: Добавьте сюда метод CalculateWater()
+        static void CalculateWater()
+        {
+            Console.Write("Сколько стаканов воды (250 мл) вы выпили сегодня? ");
+            int glasses = int.Parse(Console.ReadLine());
+            double liters = glasses * 0.25;
+            double norm = 2.0; // норма в литрах
+            double percent = (liters / norm) * 100;
+            Console.WriteLine($"\n Результаты:");
+            Console.WriteLine($"Выпито: {liters:F1} литров");
+            Console.WriteLine($"Выполнено: {percent:F0}% от нормы (2 литра)");
+            Console.Write("\n Рекомендация: ");
+            if (liters < 1.0)
+                Console.WriteLine("Пейте больше воды! Это важно для здоровья.");
+            else if (liters < 2.0)
+                Console.WriteLine("Хорошо, но до нормы еще немного. Выпейте еще ста-кан!");
+            else
+                Console.WriteLine("Отлично! Вы поддерживаете водный баланс!");
+        };
+
 
 
         // 📍 СТУДЕНТ 3: Добавьте сюда метод CalculatePages()
