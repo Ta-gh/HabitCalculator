@@ -76,11 +76,7 @@ namespace HabitCalculator
 
                     // ==================== СТУДЕНТ 5: МЕДИТАЦИЯ ====================
                     case "5":
-                        // TODO: СТУДЕНТ 5 - ЗАМЕНИТЕ СЛЕДУЮЩУЮ СТРОКУ
-                        // Вместо этого временного сообщения вызовите ваш метод CalculateMeditation()
-                        Console.WriteLine("Функция подсчета медитации пока не реализована.");
-                        // После замены должно быть:
-                        // CalculateMeditation();
+                        CalculateMeditation();
                         break;
 
                     // ==================== СТУДЕНТ 6: ПРИСЕДАНИЯ ====================
@@ -140,7 +136,27 @@ namespace HabitCalculator
 
 
         // 📍 СТУДЕНТ 5: Добавьте сюда метод CalculateMeditation()
-
+        static void CalculateMeditation()
+        {
+         Console.Write("Сколько минут вы медитировали сегодня? ");
+         int minutes = int.Parse(Console.ReadLine());
+         int norm = 10; // норма в минутах
+         double stressReduction = Math.Min(minutes * 10, 100); // максимум 100%
+         Console.WriteLine($"\n Результаты:");
+         Console.WriteLine($"Время медитации: {minutes} минут");
+         Console.WriteLine($"Снижение уровня стресса: {stressReduction:F0}%");
+         if (minutes >= norm)
+             Console.WriteLine($" Отлично! Вы выполнили норму ({norm} минут)!");
+         else
+             Console.WriteLine($" До нормы осталось {norm - minutes} минут.");
+         Console.Write("\n Мотивация: ");
+         if (minutes < 5)
+             Console.WriteLine("Начните с 5 минут в день. Это уже принесет пользу!");
+         else if (minutes < 10)
+             Console.WriteLine("Хороший старт! Добавьте еще немного для полной нормы.");
+         else
+             Console.WriteLine("Великолепно! Регулярная медитация улучшает качество жизни!");
+        }
 
         // 📍 СТУДЕНТ 6: Добавьте сюда метод CalculateSquats()
 
