@@ -22,7 +22,7 @@ namespace HabitCalculator
                 Console.WriteLine("  5. 🧘 Подсчет минут медитации (Студент 5)");
                 Console.WriteLine("  6. 🏋️ Подсчет приседаний (Студент 6)");
                 Console.WriteLine("  0. ❌ Выход");
-                Console.WriteLine();
+                Console.WriteLine("  7. 🏋️‍♀️ Подсчет калорий тренировки (Студент 7)");
                 Console.Write("👉 Ваш выбор: ");
 
                 string choice = Console.ReadLine();
@@ -92,9 +92,14 @@ namespace HabitCalculator
                         // CalculateSquats();
                         break;
 
+                        
+                    // ==================== СТУДЕНТ 7: КАЛЛОРИИ ====================
+                    case "7": 
+                    CalculateWorkoutCalories();
+                    break;
                     // ==================== ВЫХОД ====================
                     case "0":
-                        Console.WriteLine("👋 До свидания! Хорошего дня!");
+                        //Console.WriteLine("👋 До свидания! Хорошего дня!");
                         Console.WriteLine("Нажмите любую клавишу для выхода...");
                         Console.ReadKey();
                         return; // Выход из программы
@@ -102,7 +107,7 @@ namespace HabitCalculator
                     // ==================== НЕВЕРНЫЙ ВВОД ====================
                     default:
                         Console.WriteLine("❌ Ошибка: неверный выбор!");
-                        Console.WriteLine("Пожалуйста, выберите число от 0 до 6.");
+                        Console.WriteLine("Пожалуйста, выберите число от 0 до 7.");
                         break;
                 }
 
@@ -168,7 +173,7 @@ namespace HabitCalculator
                 Console.WriteLine("Хорошо, но до нормы еще немного. Выпейте еще ста-кан!");
             else
                 Console.WriteLine("Отлично! Вы поддерживаете водный баланс!");
-        };
+        }
 
 
 
@@ -267,6 +272,36 @@ static void CalculateCalories()
     else
         Console.WriteLine("Великолепно! Вы мастер приседаний! Не забывайте про технику.");
 }
+//Студент 7 метод CalculateWorkoutCalories()
+static void CalculateWorkoutCalories()
+{
+    Console.Write("Введите название тренировки: ");
+    string workout = Console.ReadLine();
+
+    Console.Write("Сколько минут длилась тренировка? ");
+    int minutes = int.Parse(Console.ReadLine());
+
+    Console.Write("Оцените интенсивность (от 1 до 10): ");
+    int intensity = int.Parse(Console.ReadLine());
+
+    // Для упрощения используем средний вес 70 кг
+    double weightKg = 70.0;
+    double caloriesBurned = (intensity * 3.5 * weightKg * minutes) / 200.0;
+
+    Console.WriteLine($"\nРезультаты:");
+    Console.WriteLine($"Тренировка: {workout}");
+    Console.WriteLine($"Длительность: {minutes} минут");
+    Console.WriteLine($"Интенсивность: {intensity}/10");
+    Console.WriteLine($"Потрачено калорий: {caloriesBurned:F0} ккал");
+    Console.Write("\nРекомендация: ");
+    if (caloriesBurned < 150)
+        Console.WriteLine("Тренировка была легкой. Попробуйте увеличить интенсивность или продолжительность!");
+    else if (caloriesBurned < 350)
+        Console.WriteLine("Хорошая тренировка! Отличный вклад в форму.");
+    else
+        Console.WriteLine("Отлично! Вы отлично потрудились. Не забывайте про восстановление.");
+}
+
 
         // ====================================================================
         // КОНЕЦ БЛОКА ДЛЯ ДОБАВЛЕНИЯ МЕТОДОВ
