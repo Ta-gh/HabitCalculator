@@ -58,11 +58,7 @@ namespace HabitCalculator
 
                     // ==================== СТУДЕНТ 3: СТРАНИЦЫ ====================
                     case "3":
-                        // TODO: СТУДЕНТ 3 - ЗАМЕНИТЕ СЛЕДУЮЩУЮ СТРОКУ
-                        // Вместо этого временного сообщения вызовите ваш метод CalculatePages()
-                        Console.WriteLine("Функция подсчета страниц пока не реализована.");
-                        // После замены должно быть:
-                        // CalculatePages();
+                        CalculatePages();
                         break;
 
                     // ==================== СТУДЕНТ 4: КАЛОРИИ ====================
@@ -134,6 +130,27 @@ namespace HabitCalculator
 
 
         // 📍 СТУДЕНТ 3: Добавьте сюда метод CalculatePages()
+static void CalculatePages()
+{
+    Console.Write("Сколько страниц вы прочитали сегодня? ");
+    int pages = int.Parse(Console.ReadLine());
+    int minutesSpent = pages * 2;
+    int hours = minutesSpent / 60;
+    int minutes = minutesSpent % 60;
+    int goal = 50; // цель в страницах
+    double progress = (double)pages / goal * 100;
+    Console.WriteLine($"\n Результаты:");
+    Console.WriteLine($"Прочитано: {pages} страниц");
+    Console.WriteLine($"Затрачено времени: {hours} ч {minutes} мин");
+    Console.WriteLine($"Прогресс к цели (50 стр): {progress:F0}%");
+    Console.Write("\n Рекомендация: ");
+    if (pages < 20)
+       Console.WriteLine("Читайте больше! 20 страниц в день - хорошая привыч-ка.");
+    else if (pages < 50)
+        Console.WriteLine("Отличный темп! Осталось совсем немного до цели!");
+    else
+        Console.WriteLine("Превосходно! Вы перевыполнили норму чтения!");
+}
 
 
         // 📍 СТУДЕНТ 4: Добавьте сюда метод CalculateCalories()
