@@ -86,7 +86,8 @@ namespace HabitCalculator
                     case "6":
                         // TODO: СТУДЕНТ 6 - ЗАМЕНИТЕ СЛЕДУЮЩУЮ СТРОКУ
                         // Вместо этого временного сообщения вызовите ваш метод CalculateSquats()
-                        Console.WriteLine("Функция подсчета приседаний пока не реализована.");
+                        CalculateSquats();
+
                         // После замены должно быть:
                         // CalculateSquats();
                         break;
@@ -242,7 +243,30 @@ static void CalculateCalories()
         }
 
         // 📍 СТУДЕНТ 6: Добавьте сюда метод CalculateSquats()
-
+                    static void CalculateSquats()
+{
+    Console.Write("Сколько приседаний вы сделали сегодня? ");
+    int squats = int.Parse(Console.ReadLine());
+    double caloriesBurned = squats * 0.5;
+    string level;
+    if (squats < 30)
+        level = "Начинающий";
+    else if (squats < 100)
+        level = "Средний";
+    else
+        level = "Продвинутый";
+    Console.WriteLine($"\n Результаты:");
+    Console.WriteLine($"Приседаний: {squats} раз");
+    Console.WriteLine($"Сожжено: {caloriesBurned:F0} ккал");
+    Console.WriteLine($"Уровень: {level}");
+    Console.Write("\n Рекомендация: ");
+    if (squats < 30)
+        Console.WriteLine("Начните с 3 подходов по 10 раз. Постепенно увеличивайте нагрузку!");
+    else if (squats < 100)
+        Console.WriteLine("Хороший результат! Попробуйте делать приседания с утяжелением.");
+    else
+        Console.WriteLine("Великолепно! Вы мастер приседаний! Не забывайте про технику.");
+}
 
         // ====================================================================
         // КОНЕЦ БЛОКА ДЛЯ ДОБАВЛЕНИЯ МЕТОДОВ
