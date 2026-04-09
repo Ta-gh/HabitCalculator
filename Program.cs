@@ -67,11 +67,7 @@ namespace HabitCalculator
 
                     // ==================== СТУДЕНТ 4: КАЛОРИИ ====================
                     case "4":
-                        // TODO: СТУДЕНТ 4 - ЗАМЕНИТЕ СЛЕДУЮЩУЮ СТРОКУ
-                        // Вместо этого временного сообщения вызовите ваш метод CalculateCalories()
-                        Console.WriteLine("Функция подсчета калорий пока не реализована.");
-                        // После замены должно быть:
-                        // CalculateCalories();
+                        CalculateCalories();
                         break;
 
                     // ==================== СТУДЕНТ 5: МЕДИТАЦИЯ ====================
@@ -137,7 +133,27 @@ namespace HabitCalculator
 
 
         // 📍 СТУДЕНТ 4: Добавьте сюда метод CalculateCalories()
-
+static void CalculateCalories()
+{
+    Console.Write("Введите название блюда: ");
+    string meal = Console.ReadLine();
+    Console.Write("Введите количество калорий в этом блюде: ");
+    int calories = int.Parse(Console.ReadLine());
+    int dailyNorm = 2000;
+    int remaining = dailyNorm - calories;
+    Console.WriteLine($"\n Результаты:");
+    Console.WriteLine($"Блюдо: {meal}");
+    Console.WriteLine($"Калорийность: {calories} ккал");
+    Console.Write("\n Рекомендация: ");
+    if (calories > 800)
+        Console.WriteLine($"Это довольно калорийно. Осталось {remaining} ккал на сегодня.");
+    else if (calories > 400)
+        Console.WriteLine($"Неплохо. У вас осталось {remaining} ккал.");
+    else
+        Console.WriteLine($"Отличный выбор! Осталось {remaining} ккал на сегодня.");
+    if (remaining < 0)
+        Console.WriteLine("⚠️ Внимание: вы превысили дневную норму калорий!");
+}
 
         // 📍 СТУДЕНТ 5: Добавьте сюда метод CalculateMeditation()
 
